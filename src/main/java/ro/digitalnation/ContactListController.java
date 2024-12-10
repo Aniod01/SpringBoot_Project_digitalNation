@@ -17,7 +17,6 @@ public class ContactListController {
 	@GetMapping("/")
 	public String getContact (Model model) {
 		model.addAttribute("contacts", contactrepo.findAll());
-		System.out.println("Creating Contact ...");
 	    return "index";
 	}
 	
