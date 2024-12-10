@@ -47,15 +47,12 @@ public class ContactListController {
 				.orElseThrow(() -> new IllegalArgumentException("Contact id: " + id + " not found"));
 		model.addAttribute("contacts", contact);
 		model.addAttribute("contact", new ContactList());
-	
 		return "updateContact";
 	}
 	
 	@GetMapping("/delete/{id}")
 	public String deleteContact(@PathVariable long id, Model model) {
-		ContactList contact = contactrepo.findById(id)
-				.orElseThrow(() -> new IllegalArgumentException("Contact id: " + id + " not found"));
-		contactrepo.delete(contact);
+		contactrepo.deleteById(id);
 		return "redirect:/";
 	}
 
