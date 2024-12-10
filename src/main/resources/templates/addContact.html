@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+</head>
+
+<body>
+	<div class="container">
+		<h2>Add new contact </h2>
+		<form action="#" th:action="@{/addContact}" th:object="${contact}" method="POST">
+			<div class="mb-3">
+			     <h3 class="form-label" for="firstName">First Name</h3>
+				 <input class="form-control" type="text" th:field="*{firstName}" id="firstName" />
+				 <h3 class="form-label" for="lastName">Last Name</h3>
+				 <input class="form-control" type="text" th:field="*{lastName}" id="lastName"  />
+				 <h3 class="form-label" for="email">Email</h3>
+				 <input class="form-control" type="text" th:field="*{email}" id="email" />
+				 <h3 class="form-label" for="phoneNumber">Phone Number</h3>
+				 <input class="form-control" type="text" th:field="*{phoneNumber}" id="phoneNumber" />
+				 <h3 class="form-label" for="address">Address</h3>
+				 <input class="form-control" type="text" th:field="*{address}" id="descriprion" />
+				  <h3 class="form-label" for="description">Description</h3>
+				 <input class="form-control" type="text" th:field="*{description}" id="descriprion" />
+				
+			</div>
+			<br>
+			<button class="btn btn-primary mt-3 mx-2" type="submit"><i class="fa fa-save"></i>Save Contact</button>
+		</form>
+	</div>
+</body>
+
+</html>

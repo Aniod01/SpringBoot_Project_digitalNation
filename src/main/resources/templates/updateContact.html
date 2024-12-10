@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+	</head>
+	<body>
+		<div class="container">
+			<div class="col-md-6">
+				<h2>Edit Contact</h2>
+				<form action="#" th:action="@{/addContact/{id}(id=${contacts.id})}" th:object="${contacts}" method="POST">
+				   <div class="mb-3">
+				     <h3 class="form-label" for="firstName">First Name</h3>
+					 <input class="form-control" type="text" th:field="*{firstName}" id="firstName" placeholder="Add First Name" />
+					 <h3 class="form-label" for="lastName">Last Name</h3>
+					 <input class="form-control" type="text" th:field="*{lastName}" id="lastName" placeholder="Add Last Name" />
+					 <h3 class="form-label" for="email">Email</h3>
+					 <input class="form-control" type="text" th:field="*{email}" id="email" placeholder="Add email" />
+					 <h3 class="form-label" for="phoneNumber">Phone Number</h3>
+					 <input class="form-control" type="text" th:field="*{phoneNumber}" id="phoneNumber" placeholder="Add phone number" />
+					 <h3 class="form-label" for="address">Address</h3>
+					 <input class="form-control" type="text" th:field="*{address}" id="descriprion" placeholder="Add address" />
+					  <h3 class="form-label" for="description">Description</h3>
+					 <input class="form-control" type="text" th:field="*{description}" id="descriprion" placeholder="Add description" />
+					
+			       </div>
+					<br>
+					<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i>Save</button>
+					
+					
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<link th:rel="stylesheet" th:href="@{/webjars/bootstrap/3.4.1/css/bootstrap.min.css} " />
+ 	<link th:rel="stylesheet" th:href="@{https://use.fontawesome.com/releases/v6.2.1/css/all.css}" />
+ 	<style>
+	table, th, td {
+	  border:1px solid gray;
+	          }
+    </style>
+	</head>
+	<body>
+	<div class="container">
+		<h1 class="text-center">Contact List Application </h1>
+		<hr />
+		<table class="table">
+		
+			<thead class="table text-center">
+				<tr>
+					<th scope="col">Actions</th>
+					<th scope="col">ID</th>
+					<th scope="col">First Name</th>
+					<th scope="col">Last Name</th>
+					<th scope="col">Email</th>
+					<th scope="col">Phone Number</th>
+					<th scope="col">Address</th>
+					<th scope="col">Description</th>
+					
+					
+				</tr>
+			</thead>		
+			<tbody>
+				<tr th:each="item : ${contacts}">
+					<td><div class="btn" role="group">
+						 <a class="btn btn-primary mt-3 mx-2" th:href="@{/edit/{id}(id=${item.id})}"><i class="fa fa-edit"></i>Edit</a>
+                         <a class="eleteBtn btn btn-danger mt-3 mx-2" th:href="@{/delete/{id}(id=${item.id})}"><i class="fa fa-trash"></i> Delete</a>
+					</div>
+					</td>
+					<td th:text="${item.id}">item_id</td>
+					<td th:text="${item.firstName}">item_firstName</td>
+					<td th:text="${item.lastName}">item_lastName</td>
+					<td th:text="${item.email}">item_email</td>
+					<td th:text="${item.phoneNumber}">item_phoneNumber</td>
+					<td th:text="${item.address}">item_address</td>
+					<td th:text="${item.description}">item_description</td>
+				</tr>				
+			</tbody>	
+		</table>
+		<p><a class="btn btn-success" href="/createContact"><i class="fa fa-plus"></i>Add new Contact</a></p>
+	</div>
+   	
+ 	<script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.4.1/js/bootstrap.min.js}"></script>
+	</body>		
+</html>
